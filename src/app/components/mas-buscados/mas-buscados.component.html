@@ -1,0 +1,19 @@
+
+      <div class="row itemsBlock">
+        <div class="col-2 contBut"><button class="contButPrev" (click)="imagesInItems(imagesPerItem.length)"><img src="assets/images/trazado-49.svg" class="butPrev"></button></div>
+        <div *ngFor="let item of items" class="col">
+          <div class="card" *ngIf="imagesPerItem.length && item!=undefined">
+            <span class="descuentoContent text-center row" *ngIf="item.discount!=0"><p class="descuento">-{{item.discount}}%</p></span>
+            <img class="itemImage w-100 h-100" id="widthHeight" src="{{item.src}}" alt="productos"/>
+            <div class="card-body">
+              <h5 class="card-title itemTittle">{{item.descripcion | limitTo : '40'}}</h5>
+            <div class="row contentValues" >
+              <p class="text-start col-5 itemPrice">${{item.value}}</p>
+              <p class="text-end col-5 itemDiscount">${{item.valueDiscount}}</p>
+              </div>
+              <div class="text-center contentCarButton row w-100"><a href="./" class="cartButton "><img class="cartButtonImg" src="assets/images/icon-cart.svg"> Agregar al carrito</a></div>
+          </div>
+        </div>
+        </div>
+        <div class="col-2 contBut"><button class="contButNext" (click)="imagesInItems(imagesPerItem.length)"><img src="assets/images/trazado-50.svg" class="butNext"></button></div>
+      </div>

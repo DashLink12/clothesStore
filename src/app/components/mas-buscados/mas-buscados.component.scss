@@ -1,0 +1,95 @@
+.itemsBlock{
+    height: 60vh;
+    .itemImage{
+        height: 30vh !important;
+        min-height:30vh !important;
+    }
+    .contBut{
+        margin-top: auto; 
+        margin-bottom: auto;
+        height: 5vh;
+        .contButNext{
+            border: none;
+            background-color: white;
+            .butNext{
+                filter: invert(0%) sepia(40%) saturate(60%) hue-rotate(70deg) brightness(70%) contrast(50%);
+                position:absolute;
+                right: 5%;
+            }
+        }
+        .contButPrev{
+            border: none;
+            background-color: white;
+            .butPrev{
+                filter: invert(0%) sepia(40%) saturate(60%) hue-rotate(70deg) brightness(70%) contrast(50%);
+                position:absolute;
+                left: 5%;
+            }
+        }
+    }
+    .card{
+        height: 60vh;
+        margin-bottom: 5vh;
+        background-color: #F4F4F4;
+        border-color: #E6E6E6;
+        .card-body{
+            height: 50vh;
+            
+        }
+        .descuentoContent{
+            position:absolute;
+            margin:auto;
+            width: auto;
+            height: auto;
+            top:2vh;
+            left: 1.5rem;
+            background-color: #5B17AA    !important;
+            .descuento{
+                color: white; 
+                margin-top: auto;
+                margin-bottom: auto;  
+            }
+        }
+    }
+    .itemTittle{
+        font-family: HelveticaNeue;
+    }
+    .contentValues{
+        height: auto;
+        .itemPrice{
+            margin-left:1vw; 
+            color: #5B17AA;
+            font-family: HelveticaNeue;
+            
+        }
+        .itemDiscount{
+            margin-right:1vw;
+            font-family: HelveticaNeue Light;
+            text-decoration-line: line-through !important;
+        }
+    }
+    .contentCarButton{
+        position: absolute;
+        bottom: 2%;
+        background-color: black;
+        .cartButton{
+            background-color: black;
+            color: white;
+            font-size: 1rem;
+            height: auto;
+            text-decoration: none;
+            .cartButtonImg{
+                filter: invert(100%) sepia(100%) saturate(100%) hue-rotate(100deg) brightness(100%) contrast(100%);
+                height: 20px;
+                width: auto !important;
+            }
+        }
+
+    }
+}
+span{
+    background-color: #8C8C8C;
+    height: 10vh;
+    width: 5vw;
+    color: white;
+}

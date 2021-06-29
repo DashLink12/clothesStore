@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Bebas;
+    src: url(assets/fonts/Bebas-Regular.otf) format("opentype");
+  }
+  @font-face {
+    font-family: HelveticaNeue;
+    src: url(assets/fonts/HelveticaNeue-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: HelveticaNeue Light;
+    src: url(assets/fonts/HelveticaNeue-Light.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: HelveticaNeue Medium;
+    src: url(assets/fonts/HelveticaNeue-Medium.ttf) format("truetype");
+  }
+  .separador{
+    height: 7vh;
+  }

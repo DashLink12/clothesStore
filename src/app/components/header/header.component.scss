@@ -1,0 +1,127 @@
+body{
+    min-height: 60px;
+    nav{
+        background-color: white ;
+        height: auto !important;
+        .button-menu{
+            border: none;
+        }
+    }
+    .content-searchbar{
+        height: 5vh;
+        margin-left: 5vw;
+        .input-searchbar{
+            width: 80vw;
+            height: 5vh;
+            background: #EEEEEE 0% 0% no-repeat padding-box;
+            border: none;
+            font-family: HelveticaNeue Light;
+            font-size: 20px;
+            opacity: 0.5;
+        }
+        .button-searchbar{
+            opacity: 1;
+            border: none;
+            font-size: 25px;
+            .imgSearch{
+                background-color: #DEDEDE 0% 0% no-repeat padding-box;
+                width: 5vw;
+                height: 5vh;
+            }
+        }
+    }
+    .contentPC-header{
+        height: auto !important;
+        margin-top: 1.5vh !important;
+        .content-searchbarPC{
+            margin-left: 6vw;
+            .buttonIniciar{
+                background-color: white;
+                height: 30px;
+                font-family: HelveticaNeue Medium;
+            }
+            .input-searchbarPC{
+                width: 30vw;
+                height: 5vh;
+                padding-left: 30px;
+                margin-top: auto; 
+                background: #EEEEEE 0% 0% no-repeat padding-box;
+                opacity: 1;
+                border: none;
+                font-family: HelveticaNeue Light;
+                font-size: 20px;
+            }
+            .button-searchbarPC{
+                background: #DEDEDE 0% 0% no-repeat padding-box;
+                opacity: 1;
+                border: none;
+                font-size: 25px;
+                .imgSearchPC{
+                    background-color: #DEDEDE 0% 0% no-repeat padding-box;
+                    width: 2vw;
+                    height: 5vh;
+                }
+            }
+        }
+
+    }
+}
+.separador{
+    margin-top: 70px;
+}
+.logoEmpresa{
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1; 
+    font-family: Bebas;
+    margin-left: 3vw;
+}
+.optionsText{
+    color: #000000 !important;
+    margin-left: 20px;
+    font-family: HelveticaNeue;
+}
+.valor{
+    position:absolute;
+    margin:auto;
+    width: 20px;
+    height: 20px;
+    top:0.5rem;
+    right: 1.5rem;
+    background-color: #5B17AA    !important;
+    border-radius: 100%;
+    .valorActual{
+        color: white;   
+        margin:auto;
+    }
+}
+.valorPC{
+    position:absolute;
+    margin:auto;
+    width: 20px;
+    height: 20px;
+    top:2.5vh;
+    right: 27vw;
+    background-color: #5B17AA    !important;
+    border-radius: 100%;
+    .valorActualPC{
+        color: white;   
+        margin:auto;
+    }
+    .space-buttons{
+        margin:130px !important;padding:5px !important; 
+    }
+}
+.contentSubPC{
+    background-color: #000000 !important;
+    height: 6vh;
+    .categorieTextBlack{
+        margin-top: 1vh;
+        text-decoration: none;
+        color: white;
+        font-family: HelveticaNeue;
+        font-size: 20px;
+        border-right-style: solid;
+        border-right-color: white;
+    }
+}

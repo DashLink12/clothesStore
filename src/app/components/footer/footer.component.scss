@@ -1,0 +1,65 @@
+footer{
+    background: #000000 0% 0% no-repeat padding-box !important;
+    opacity: 1;
+    .container{
+        background: #000000 0% 0% no-repeat padding-box !important;
+        .content-options{
+            background: #000000 0% 0% no-repeat padding-box !important;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            .content-button{
+                position: absolute;
+                right: 10%;
+                color: white;
+                background-color:transparent !important;
+                border: none;
+            }
+        }
+        .titulo-fill{
+            text-decoration:none;
+            font-size: 26px;
+            font-family: HelveticaNeue;
+            color: white;
+            margin-left: 10vw;
+        }
+        .subtitle-fill{
+            text-decoration:none;
+            font-size: 18px;
+            font-family:  HelveticaNeue Light;
+            color: white;
+            margin-left: 9vw;
+        }
+        .separator-options{
+            color: white;
+            background-color: white;
+        }
+    }
+    .separator-copyright{
+        height: 1px;
+        width: 90vw;
+        color: white;
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .copy-content{
+        font-size: 20px;
+        font-family: HelveticaNeue Light;
+        color: white;
+        opacity: 1;
+
+    }
+    .copyText{
+        font-size: 15px;
+        color: white;
+    }
+    .redesSociales{
+        margin-left: 2vw !important;
+    }
+    .redesSociales1{
+        margin-left: 6vw !important;
+    }
+    .redesSociales2{
+        margin-left: 1.3vw !important;
+    }
+}

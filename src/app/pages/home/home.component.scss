@@ -1,0 +1,37 @@
+.principal-content{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    .imgCategories{
+        position: relative;
+        .imgMostrar{
+            height: 30vw;
+            width: 100%;
+        }
+    }
+    .textCategories{
+        position: absolute; 
+        bottom: 10vh; 
+        left: 6vw; 
+        font-size: 3vw;
+        color: white;
+        font-family: Roboto;
+    }
+    
+    .imgCategoriesMB{
+        position: relative;
+        .imgMostrarMB{
+            margin-left: 25%;
+            height: 30vw;
+            width: 80vw;
+            margin-bottom: 10vh;
+        }
+    }
+    .textCategoriesMB{
+        position: absolute; 
+        bottom: 10vh; 
+        left: 40vw !important;
+        font-size: 3vw;
+        color: white;
+        font-family: Roboto;
+    }
+}

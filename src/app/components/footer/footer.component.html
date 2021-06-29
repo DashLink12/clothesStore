@@ -1,0 +1,56 @@
+<!--Componente footer-->
+    <footer class="footer">
+        <!--Contenedor de footer, indicando que va a ser tomado como row-->
+        <div class="row ">
+            <!--Contenedor de selecciones extras para usuario-->
+            <div class="row container" id="accordionParent">
+                <!--Indicador de que este es un item del acordeon, que sera un objeto OPTIONS que será iterado-->
+                <div class="accordion-item content-options col-12 col-xxl-4 " *ngFor="let option of options; let i = index">
+                    <!--Contenedor del header del acordeon, el titulo de las opciones-->
+                    <div class="accordion-header col-12 row" [id]="'heading'+i" *ngIf="option.subtitles[0]!=null">
+                         <!--Contenedor del header del acordeon, el titulo de las opciones-->
+                        <a  [ngClass]="{ 'collapsed': i != 0 }" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+i" aria-expanded="true" [attr.aria-controls]="'collapse'+i" class="titulo-fill">{{option.title}}
+                             <!--Botón de mostrar los subtitulos de las opciones, mostrado solo en móviles-->
+                            <button class="d-xxl-none content-button" ><p>+</p></button>
+                        </a>
+                    </div>
+                    <!--En caso de pantallas para celular para habilitar el acordeon-->
+                    <div [id]="'collapse'+i" class="accordion-collapse collapse d-xxl-none"  [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionParent" *ngIf="option.subtitles[0]!=null">
+                        <div class="accordion-body text-start">
+                            <div  *ngFor="let subtitles of option.subtitles">
+                                
+                            <h3 class="subtitle-fill col-12">{{subtitles.name}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--En caso de pantallas de laptop/PC no se debe habilitar el acordeon-->
+                    <div [id]="'collapse'+i" class="accordion-collapse d-none d-xxl-block"  [attr.aria-labelledby]="'heading'+i" data-bs-parent="#accordionParent" *ngIf="option.subtitles[0]!=null">
+                        <div class="accordion-body text-start">
+                            <div  *ngFor="let subtitles of option.subtitles">
+                                
+                            <h3 class="subtitle-fill col-12">{{subtitles.name}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--En caso de pantallas de laptop/PC
+                    Se resalta que no se mostrará una sección cuyo no tenga subsecciones, como el caso de medios de pago, que no se especificó en el diseño
+                    En vez de la última sección sin subsecciones, se mostrará las redes sociales-->
+                    <div class=" col-xxl-12 socialOptions" *ngIf="option.subtitles[0]==null">
+                        <h1 class="titulo-fill ">SÍGUENOS EN:</h1>
+                            <a class="col-3 redesSociales1" href="https://www.facebook.com/experimentality/"><img alt="facebook" src="assets/images/icon-facebook.svg"></a>
+                            <a class="col-3 redesSociales2" href="https://twitter.com/experiment4lity"><img alt="twitter" src="assets/images/icon-twitter.svg"></a>
+                            <a class="col-3 redesSociales" href="https://www.instagram.com/experimentality.co/?hl=es"><img alt="instagram" src="assets/images/icon-instagram.svg" ></a>
+                            <a class="col-3 redesSociales" href="https://www.youtube.com/watch?v=RDV3Z1KCBvo"><img alt="youtube" src="assets/images/icon-youtube.svg"></a>
+                    </div>
+                     <!--Divisorio para cada sección, en caso de que sea celular-->
+                    <div class="dropdown-divider separator-options d-xxl-none" *ngIf="option.subtitles[0]!=null"></div>    
+                      
+                </div>
+            </div>
+             <!--Sección de copyright-->
+              <!--En caso de pantallas de laptop/PC se debe mostrar un separador al final-->
+        <a class="col-xxl-12 d-none d-xxl-block justify-content-center separator-copyright"></a>
+         <!--Texto de copyright-->
+        <div class="copyText text-center">&copy; Copyright Colombia. Todos los derechos reservados</div>
+        </div>
+    </footer>

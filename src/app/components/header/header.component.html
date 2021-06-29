@@ -1,0 +1,94 @@
+<!--Contenedor header-->
+<body>
+    <!--Contenedor para celular-->
+  <nav class="navbar navbar-light fixed-top col-12 d-xxl-none row">
+    <div class="container-fluid">
+        <!--Navbar button, espacio de 3 cols
+        Las condiciones isCollapsed se las pone para activar/desactivar el menu-->
+      <button class="navbar-toggler col-3 button-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation" (click)="colapsar()" *ngIf="!isCollapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!--Navbar logo, espacio 3 cols, deberia ser PNG, pero la imagen esta en Capitalize por lo que se pone texto plano-->
+      <!--<img class="col-3" src="assets/images/ClothesStore.svg" alt="logoEmpresa">-->
+      <h1 class="col-3 logoEmpresa" *ngIf="!isCollapsed" >CLOTHESSTORE</h1>
+      <!--Separador-->
+      <div class="col-3" *ngIf="!isCollapsed"></div>
+      <!--Botón carrito-->
+      <div class="content-carrito" *ngIf="!isCollapsed">
+          <a class="navbar-brand" href="#"><img alt="carrito" src="assets/images/icon-cart.svg"></a>
+          <!--El 1 se substituye con el valor real, cuando se aplique esto con = {{valor}}   -->
+          <span class="valor text-center"><p class="valorActual">1</p></span>
+      </div>
+      <!--Menu de hamburguesa desplegado-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-end" href="./"><img alt="cerrar" src="assets/images/icon-ionic-ios-close-circle-outline.svg" width="20px" height="20px"></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link optionsText" href="./">Hombre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link optionsText" href="./">Mujer</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link optionsText" href="./">Junior</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link optionsText" href="./">Niños</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link optionsText" href="./">Accesorios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link optionsText" href="./">Ofertas</a>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!--Barra de busqueda para celulares-->
+  <div class="d-xxl-none d-block  separador">
+      <div class="row">
+        <form class=" col-12 content-searchbar" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                   <!--Searchbar con boton submit-->
+                      <input class="input-searchbar col-11" id="texto" type="text" formControlName="texto" placeholder="Buscar aquí producto">
+                      <button type="submit col-1" class="button-searchbar">
+                          <img class="imgSearch" src="assets/images/Icon-ionic-ios-search.svg">
+                      </button>      
+        </form>
+    </div>
+    </div>
+<!--Contenedor para laptop/pc-->
+<div class="d-none d-xxl-block contentPC-header">
+    <!--Contenedor en una row-->
+    <div class="row">
+        <!--Logo-->
+        <h1 class="logoEmpresa col-3" >CLOTHESSTORE</h1>
+        <!--contenedor form, para la busqueda, y otros botones tamaño de 7 cols-->
+        <form class=" col-7 content-searchbarPC" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+             <!--Searchbar con boton submit-->
+                <input  class="input-searchbarPC" id="texto" type="text" formControlName="texto" placeholder="Buscar aquí producto">
+                <button type="submit" class="button-searchbarPC">
+                    <img class="imgSearchPC" src="assets/images/Icon-ionic-ios-search.svg">
+                </button>      
+                 <!--Otros botones del navbar-->
+                <a class=" m-5" href="#"><img alt="carrito" src="assets/images/icon-cart.svg">
+                <span class="valorPC text-center"><p class="valorActualPC">1</p></span></a>
+                <a class=" m-1" href=""><img alt="profile" src="assets/images/icon-user.svg"></a> 
+                <button class="m-3 buttonIniciar"><p>Iniciar Sesión</p></button>
+        </form>
+    </div>
+    <div class=" contentSubPC d-none d-xxl-block">
+      <div class="row text-center">
+        <a class="col-xxl-2 categorieTextBlack" href="./">Hombre</a>
+        <a class="col-xxl-2 categorieTextBlack" href="./">Mujer</a>
+          <a class="col-xxl-2 categorieTextBlack" href="./">Junior</a>
+          <a class="col-xxl-2 categorieTextBlack" href="./">Niños</a>
+          <a class="col-xxl-2 categorieTextBlack" href="./">Accesorios</a>
+          <a class="col-xxl-2 categorieTextBlack" href="./">Ofertas</a>
+
+      </div>
+    </div>
+</div>
+</body>
