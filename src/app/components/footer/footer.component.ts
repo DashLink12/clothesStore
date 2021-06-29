@@ -12,6 +12,7 @@ export class FooterComponent implements OnInit {
   }
 
   async ngOnInit() {
+    //Opciones del footer
     this.options= [
       {title:"POLÍTICAS",subtitles:[
         {name:"Políticas de privacidad",referencia:"./"},

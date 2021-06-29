@@ -1,19 +1,30 @@
-
+<!--El contenedor del componente-->
       <div class="row itemsBlock">
+        <!--Boton para retroceder, ancho 2 col-->
         <div class="col-2 contBut"><button class="contButPrev" (click)="imagesInItems(imagesPerItem.length)"><img src="assets/images/trazado-49.svg" class="butPrev"></button></div>
+        <!--El contenedor de las cards, ngFor por los productos, se pone col para que sea responsive-->
         <div *ngFor="let item of items" class="col">
+          <!--El card-->
           <div class="card" *ngIf="imagesPerItem.length && item!=undefined">
-            <span class="descuentoContent text-center row" *ngIf="item.discount!=0"><p class="descuento">-{{item.discount}}%</p></span>
+            <!--El span color morado, del descuento-->
+            <span class="descuentoContent text-center row" *ngIf="item.discount!=0"><p class="descuento">-{{item.discount | percent:'1.0-0'}}</p></span>
+            <!--La imagen, con ancho y alto de 100%-->
             <img class="itemImage w-100 h-100" id="widthHeight" src="{{item.src}}" alt="productos"/>
+            <!--Cuerpo del card-->
             <div class="card-body">
+              <!--La descripcion del producto, tiene decoracion de limite de caracteres 40-->
               <h5 class="card-title itemTittle">{{item.descripcion | limitTo : '40'}}</h5>
-            <div class="row contentValues" >
-              <p class="text-start col-5 itemPrice">${{item.value}}</p>
-              <p class="text-end col-5 itemDiscount">${{item.valueDiscount}}</p>
+              <!--Contenedor de valor y valor con descuento, puesto en la parte inferior-->
+            <div class="row contentValues sticky-bottom" >
+              <!--Los valores, puesto al start y end del width-->
+              <p class="text-start col-5 itemPrice">${{item.value | number : '1.1-1'}}</p>
+              <p class="text-end col-5 itemDiscount">${{item.valueDiscount | number : '1.0-0'}}</p>
               </div>
+              <!--El contenedor del button que ocupa todo el width-->
               <div class="text-center contentCarButton row w-100"><a href="./" class="cartButton "><img class="cartButtonImg" src="assets/images/icon-cart.svg"> Agregar al carrito</a></div>
           </div>
         </div>
         </div>
+        <!--Boton para avanzar, ancho 2 col-->
         <div class="col-2 contBut"><button class="contButNext" (click)="imagesInItems(imagesPerItem.length)"><img src="assets/images/trazado-50.svg" class="butNext"></button></div>
       </div>

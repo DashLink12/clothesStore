@@ -20,8 +20,13 @@ export class HeaderComponent implements OnInit {
   async colapsar(){
     this.isCollapsed = true;
   }
-
+  //Opcion para realizar la busqueda
   onSubmit():void{
+    //En caso de que se quiera buscar en la misma pagina, se realiza la configuracion de reusar estrategia, e ir hacia la misma pagina
+    let currentUrl = this.router.url;
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([currentUrl]);
     this.SearchText=this.checkoutForm.value.texto;
     this.router.navigate(['buscar/:' + this.SearchText]);
   }

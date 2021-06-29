@@ -10,7 +10,7 @@
       </button>
       <!--Navbar logo, espacio 3 cols, deberia ser PNG, pero la imagen esta en Capitalize por lo que se pone texto plano-->
       <!--<img class="col-3" src="assets/images/ClothesStore.svg" alt="logoEmpresa">-->
-      <h1 class="col-3 logoEmpresa" *ngIf="!isCollapsed" >CLOTHESSTORE</h1>
+      <a href="./" class="contentLogo col-3" *ngIf="!isCollapsed"><h1 class="logoEmpresa col-3" >CLOTHESSTORE</h1></a>
       <!--Separador-->
       <div class="col-3" *ngIf="!isCollapsed"></div>
       <!--Botón carrito-->
@@ -64,7 +64,7 @@
     <!--Contenedor en una row-->
     <div class="row">
         <!--Logo-->
-        <h1 class="logoEmpresa col-3" >CLOTHESSTORE</h1>
+        <a href="./" class="contentLogo col-3"><h1 class="logoEmpresa col-3" >CLOTHESSTORE</h1></a>
         <!--contenedor form, para la busqueda, y otros botones tamaño de 7 cols-->
         <form class=" col-7 content-searchbarPC" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
              <!--Searchbar con boton submit-->

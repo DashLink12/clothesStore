@@ -1,18 +1,25 @@
+<div *ngIf="isVisible" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+      <span class="sr-only" id="loading"></span>
+  </div>
+</div>
 <div class="principal-content">
     <app-header></app-header>
+    
     <div class="separador"></div>
+    <!--Similar html configuration of mas buscados, with personalized changes-->
 <body class="container-fluid" style="width: 80vw;">
       <div class="row itemsBlock">
           <div *ngFor="let item of items" class="col-md-4 col-xxl-3 col-12">
             <div class="card">
-              <span class="descuentoContent text-center row"><p class="descuento">-{{item.discount}}%</p></span>
+              <span class="descuentoContent text-center row"><p class="descuento">-{{item.discount | percent:'1.0-0'}}</p></span>
               <img class="itemImage w-100 h-100" id="widthHeight" src="{{item.src}}" alt="productos"/>
               <div class="card-body">
                 <h5 class="card-title itemTittle">{{item.descripcion | limitTo : '40'}}</h5>
               </div>
               <div class="row contentValues" >
-                <p class="text-start col-5 itemPrice">${{item.value}}</p>
-                <p class="text-end col-5 itemDiscount">${{item.valueDiscount}}</p>
+                <p class="text-start col-5 itemPrice">${{item.value | number : '1.1-1'}}</p>
+                <p class="text-end col-5 itemDiscount">${{item.valueDiscount | number : '1.0-0'}}</p>
                 </div>
                 <div class="text-center contentCarButton"><a href="./" class="cartButton"><img class="cartButtonImg" src="assets/images/icon-cart.svg"> Agregar al carrito</a></div>
             </div>

@@ -69,6 +69,9 @@ body{
 .separador{
     margin-top: 70px;
 }
+.contentLogo{
+    text-decoration: none;
+}
 .logoEmpresa{
     letter-spacing: 0px;
     color: #000000;
@@ -101,7 +104,7 @@ body{
     width: 20px;
     height: 20px;
     top:2.5vh;
-    right: 27vw;
+    right: 30vw;
     background-color: #5B17AA    !important;
     border-radius: 100%;
     .valorActualPC{

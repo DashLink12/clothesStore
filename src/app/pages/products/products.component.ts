@@ -9,15 +9,20 @@ import { Product } from 'src/app/interfaces/productI';
 })
 export class ProductsComponent implements OnInit {
   items:Array<Product> = [];
+  isVisible = true; // whenever you need to hide an element
   constructor(private service: MercadoLibreService,private route: ActivatedRoute) {
-    let valorBusqueda = this.route.snapshot.params.text;  
-    console.log("producto de venta" + valorBusqueda)
+    let valorBusqueda = this.route.snapshot.params.text; 
+    // Me suscribo al servicio, para obtener la response
     service.searchProducts(valorBusqueda).subscribe((response)=>{
       this.items = response;
+      this.isVisible=false;
     })
    }
 
   ngOnInit(): void {
   }
+  
+  
+
 
 }

@@ -10,46 +10,52 @@ import { MercadoLibreService } from 'src/app/services/mercado-libre.service';
 })
 export class MasBuscadosComponent implements OnInit {
   items: Array<Product> = [];
-  prueba: Array<Product>=[]
+  contenedorItems: Array<Product>=[]
   innerWidth: number;
   imagesPerItem:Array<number>;
   actual:number;
   constructor(private service: MercadoLibreService) {
-    service.aleatoryProducts().subscribe((response: Product[])=>this.prueba=response)
     this.innerWidth = window.innerWidth
     this.imagesPerItem = this.calcularImagenesPorItem(this.innerWidth);
     this.actual=0;
-    this.imagesInItems(this.imagesPerItem.length);
+    service.aleatoryProducts().subscribe((res)=>{
+      this.contenedorItems=res.getValue();
+      this.imagesInItems(this.imagesPerItem.length);
+    })
+    
   }
 
   async ngOnInit() {
   }
-  async cargar(){
-  }
+  //Metodo que escucha eventos de cambio de tamaño web
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.innerWidth = window.innerWidth;
     this.imagesPerItem = this.calcularImagenesPorItem(this.innerWidth);
     this.imagesInItems(this.imagesPerItem.length);
   }
-  imagesInItems(quantity:number){
+  /**Metodo que recoje los productos indicados por el parametro quantity,
+   * siendo este la cantidad de productos que se deben mostrar por pagina, atributo que cambia dependiendo del tamaño
+  */
+  async imagesInItems(quantity:number){
     let temp = [];
     let valueTemp = 0;
-    for(let product of this.prueba){
-      if( product.index >= this.actual && product.index< this.actual+quantity && this.prueba.length-1 >=this.actual){
+    for(let product of this.contenedorItems){
+      if( product.index >= this.actual && product.index< this.actual+quantity && this.contenedorItems.length >=this.actual){
         temp.push(product);
-        console.log(quantity)
-        console.log(product)
         valueTemp++;
       }
     }
-    this.items = temp;
-    if(this.actual>= this.prueba.length){
+    this.items = await temp;
+    if(this.actual+valueTemp>= this.contenedorItems.length){
       this.actual=0;
     }else{
       this.actual += quantity;
     }
   }
+  /**Metodo privado que identifica los diferentes tamaños de las paginas, y devuelve un array con la cantidad de productos
+   * que deben haber en una página
+  */
   private calcularImagenesPorItem(tamano:number):Array<number>{
     if(tamano>=1400){
       return Array(4).fill(0).map((x,i)=>i);

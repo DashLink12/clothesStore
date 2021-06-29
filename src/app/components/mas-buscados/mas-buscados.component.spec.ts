@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MasBuscadosComponent } from './mas-buscados.component';
@@ -8,6 +9,7 @@ describe('MasBuscadosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[HttpClientTestingModule],
       declarations: [ MasBuscadosComponent ]
     })
     .compileComponents();
@@ -19,7 +21,4 @@ describe('MasBuscadosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
